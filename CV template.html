@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CV Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            margin: 50px;
+            background-color: #fff;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: -8px 7px 24px 1px rgb(192 191 226);
+        }
+            
+        .container .left_side,
+        .container .right_side {
+            position: relative;
+            padding: 40px;
+        }
+
+        .container .left_side {
+            background-color: #003147;
+        }
+
+        .left_side:hover {
+            border: 3px solid #03a9f4;
+        }
+
+        .profiletext {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profiletext .imgbx {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profiletext .imgbx:hover {
+            border: 5px solid #03a9f4;
+        } 
+
+        .profiletext .imgbx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .profiletext h2 {
+            color: #fff;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.4em;
+        }
+       
+        .profiletext h2 span {
+            font-size: 0.8em;
+            font-weight:300 ;
+
+        }
+
+        .contactInfo,
+        .eduinfo,
+        .language {
+            padding-top: 40px;
+        }
+
+        .title {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contactInfo ul {
+            position: relative;
+        }
+
+        .contactInfo ul li {
+            position: relative;
+            list-style: none;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .contactInfo ul li .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: #03a9f4;
+        } 
+ 
+        .contactInfo ul li span,
+        .eduinfo p {
+            color: #fff;
+            font-weight: 300;
+        }
+
+        h4 {
+            color: #fff;
+            font-weight: 300;
+            padding: 5px 0;
+        }
+
+        .language .lang .percent {
+            position: relative;
+            width: 100%;
+            height: 5px;
+            background-color: rgba(51, 49, 49, 0.883);
+            border-radius: 5px;
+        }
+
+        .language .lang .percent div {
+            height: 100%;
+            background-color: #03a9f4;
+            border-radius: 5px;
+        }
+
+        .container .right_side {
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .profile {
+            box-shadow: inset -1px -1px 3px -1px #429cc4          
+        }
+
+        .profile:last-child {
+            padding-bottom: 5px;
+        }
+
+        h1 {
+            color: #003147 ;
+            font-size: 1.7em;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .profile p {
+            color: rgb(88, 96, 105);
+            letter-spacing: 1px;
+            line-height: 23px;
+            padding: 10px 0 0 10px;
+        }
+
+        .skills {
+            margin: 30px 0;
+        }
+
+        .skills .course {
+            box-shadow: inset 0px -1px 3px -2px #429cc4;
+            margin: 25px 0;
+            min-height: 30px;
+            max-height: 30px;   
+        }
+
+        .skills .course .course_name {
+            float: left;
+            color: rgb(88, 96, 105);
+            letter-spacing: 1px;
+            line-height: 23px;
+            padding-left: 10px;
+        }
+
+        .skills .course .percent {
+            position: relative;
+            top: 15px;
+            right: 10px;
+            float: left;
+            height: 5px;
+            background-color: rgba(201, 200, 200, 0.801);
+            border-radius: 5px;
+        }
+        
+        .skills .course .percent div {
+            height: 100%;
+            background-color: #03a9f4;
+            border-radius: 5px;
+        }
+
+        .interest {
+            box-shadow: inset 0px -1px 3px -2px #429cc4;
+            margin: 30px 0;
+        }
+
+        .interest div {
+            float: left;
+        }
+
+        .interest div .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: #03a9f4;
+        }
+
+        .interest div .text {
+            color: rgb(88, 96, 105);
+            line-height: 23px;
+            margin-left: -5px;
+        }
+
+         @media (max-width: 800px) {
+            .container {
+                 margin: 10px;
+                 grid-template-columns: repeat(1,1fr);
+            }
+
+            .interest div {
+                float: none;
+                width: 50%;
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .skills .course {
+                box-shadow: none;
+            }
+
+            .skills .course .percent {
+                position: static;
+            }
+
+            .skills .course .course_name {
+                float: none;
+            }
+
+        }
+
+            
+            
+       
+
+
+    
+       
+
+
+
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profiletext">
+                <div class="imgbx">
+                    <img src="PicsArt_09-13-07.08.06.jpg" alt="image not found">
+                </div>
+                    <h2>Kariem ALaa<br><span>Web Developer</span></h2>
+            </div>
+
+            <div class="contactInfo">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+20 155 020 7144</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-google" aria-hidden="true"></i></span>
+                        <span class="text">kalaa1588@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                        <span class="text">kariem3laa_2001</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">Shoubra, Cairo, EGYPT</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="eduinfo">
+                <h3 class="title">Education</h3>
+                <p>Studying ELectronics and Communications at Shoubra Faculty of Engineering</p>
+            </div>
+
+            <div class="language">
+                <h3 class="title">Languages</h3>
+                <div class="lang">
+                    <h4>Arabic</h1>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="lang">
+                    <h4>English</h1>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="lang">
+                    <h4>German</h1>
+                    <div class="percent">
+                        <div style="width: 45%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+
+        
+        <div class="right_side">
+            <div class="profile">
+                <h1>Profile</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aut facere provident sunt ab est
+                    commodi ipsam quos velit deserunt repellat voluptatem, laudantium recusandae vitae ad dicta at rem delectus!</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aut facere provident sunt ab est
+                    commodi ipsam quos velit deserunt repellat voluptatem, laudantium recusandae vitae ad dicta at rem delectus!</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aut facere provident sunt ab est
+                    commodi ipsam quos velit deserunt repellat voluptatem, laudantium recusandae vitae ad dicta at rem delectus!</p>
+            </div>
+
+            <div class="skills">
+                <h1>Professional Skills</h1>
+                <div class="course">
+                    <div class="course_name" style="width: 25%;">HTML</div>
+                    <div class="percent" style="width: 70%;">
+                        <div style="width: 93%;"></div>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course_name" style="width: 25%;">CSS</div>
+                    <div class="percent" style="width: 70%;">
+                        <div style="width: 97%;"></div>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course_name" style="width: 25%;">JAVASCRIPT</div>
+                    <div class="percent" style="width: 70%;">
+                        <div style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course_name" style="width: 25%;">PHOTOSHOP</div>
+                    <div class="percent" style="width: 70%;">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course_name" style="width: 25%;">ADOBE XD</div>
+                    <div class="percent" style="width: 70%;">
+                        <div style="width: 98%;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="interest">
+                <h1>interest</h1>
+                <div style="width: 25%;">
+                    <span class="icon"><i class="fa fa-gamepad" aria-hidden="true"></i></span>
+                    <span class="text">Gaming</span>
+                </div>
+                <div style="width: 25%;">
+                    <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                    <span class="text">Reading</span>
+                </div>
+                <div style="width: 25%;">
+                    <span class="icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></span>
+                    <span class="text">Football</span>
+                </div>
+                <div style="width: 25%;">
+                    <span class="icon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
+                    <span class="text">Cocking</span>
+                </div>
+
+            </div>
+                
+                
+   
+                
+            
+
+            
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
